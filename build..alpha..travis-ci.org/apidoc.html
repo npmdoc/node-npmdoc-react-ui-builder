@@ -1,0 +1,885 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/ipselon/react-ui-builder#readme"
+
+    >react-ui-builder (v0.3.4)</a>
+</h1>
+<h4>The visual tool for prototyping UI for ReactJS components and Web applications.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-ui-builder">module react-ui-builder</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-ui-builder.</span>FileFormatter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-ui-builder.</span>FileParser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-ui-builder.</span>ModelParser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">react-ui-builder.</span>PathResolver</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-ui-builder.FileFormatter">module react-ui-builder.FileFormatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.FileFormatter.formatJsFile">
+            function <span class="apidocSignatureSpan">react-ui-builder.FileFormatter.</span>formatJsFile
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-ui-builder.FileParser">module react-ui-builder.FileParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.FileParser.getFileAst">
+            function <span class="apidocSignatureSpan">react-ui-builder.FileParser.</span>getFileAst
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.FileParser.traverse">
+            function <span class="apidocSignatureSpan">react-ui-builder.FileParser.</span>traverse
+            <span class="apidocSignatureSpan">(e, r)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.FileParser.validateSourceCode">
+            function <span class="apidocSignatureSpan">react-ui-builder.FileParser.</span>validateSourceCode
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-ui-builder.ModelParser">module react-ui-builder.ModelParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.ModelParser.cleanModel">
+            function <span class="apidocSignatureSpan">react-ui-builder.ModelParser.</span>cleanModel
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.ModelParser.getModelComponentMap">
+            function <span class="apidocSignatureSpan">react-ui-builder.ModelParser.</span>getModelComponentMap
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-ui-builder.PathResolver">module react-ui-builder.PathResolver</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.PathResolver.replaceInPath">
+            function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>replaceInPath
+            <span class="apidocSignatureSpan">(e, t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.PathResolver.resolveFromComponentPerspective">
+            function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>resolveFromComponentPerspective
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.PathResolver.resolveFromModulePerspective">
+            function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>resolveFromModulePerspective
+            <span class="apidocSignatureSpan">(e, t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-ui-builder.PathResolver.resolveFromProjectPerspective">
+            function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>resolveFromProjectPerspective
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-ui-builder" id="apidoc.module.react-ui-builder">module react-ui-builder</a></h1>
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-ui-builder.FileFormatter" id="apidoc.module.react-ui-builder.FileFormatter">module react-ui-builder.FileFormatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.FileFormatter.formatJsFile" id="apidoc.element.react-ui-builder.FileFormatter.formatJsFile">
+        function <span class="apidocSignatureSpan">react-ui-builder.FileFormatter.</span>formatJsFile
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatJsFile(e){try{return _esformatter2[&#x22;default&#x22;].format(e,esformatterOptions)}catch(t){throw console.error(t),Error(
+t.message)}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var r={};if(null!=e)for(var t in
+ e)Object.prototype.hasOwnProperty.call(e,t)&#x26;&#x26;(r[t]=e[t]);return r[&#x22;default&#x22;]=e,r}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,r){if(!(e instanceof r))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,r){for(var t=0;t&#x3c;r.length;t++){var n=r[t];n.enumerable=n.enumerable||!1,n.configurable=!0,&#x22;value
+&#x22;in n&#x26;&#x26;(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(r,t,n){return t&#x26;&#x26;e(r.prototype
+,t),n&#x26;&#x26;e(r,n),r}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_FileManagerJs=require
+(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileFormatterJs=require(&#x22;./FileFormatter
+.js&#x22;),formatter=_interopRequireWildcard(_FileFormatterJs),FileGenerator=function(){function e(){_classCallCheck(this,e),this
+.fileManager=new _FileManagerJs2[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;generateFile&#x22;,value:function(e,r,t){
+var n=this;return this.fileManager.readFile(r).then(function(r){var n=_lodash2[&#x22;default&#x22;].template(r),a=n(t);return(-1
+!==e.indexOf(&#x22;.js&#x22;,e.length-3)||-1!==e.indexOf(&#x22;.jsx&#x22;,e.length-4))&#x26;&#x26;(a=formatter.<span class="apidocCodeKeywordSpan
+">formatJsFile</span>(a)),a}).then(function(r){return n.fileManager.ensureFilePath(e).then(function(){return r})}).then(function
+(r){return n.fileManager.writeFile(e,r)})}}]),e}();exports[&#x22;default&#x22;]=FileGenerator,module.exports=exports[&#x22;default
+&#x22;];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-ui-builder.FileParser" id="apidoc.module.react-ui-builder.FileParser">module react-ui-builder.FileParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.FileParser.getFileAst" id="apidoc.element.react-ui-builder.FileParser.getFileAst">
+        function <span class="apidocSignatureSpan">react-ui-builder.FileParser.</span>getFileAst
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFileAst(e){var r=null;try{r=_esprimaFb2[&#x22;default&#x22;].parse(e,{tolerant:!0,range:!0,comment:!0})}catch(t){throw Error(&#x22;
+Can not parse file, error: &#x22;+t.message)}return r}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var r={};if(null!=e)for(var n in
+ e)Object.prototype.hasOwnProperty.call(e,n)&#x26;&#x26;(r[n]=e[n]);return r[&#x22;default&#x22;]=e,r}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,r){if(!(e instanceof r))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}function findExportsNode(e){var r=null;fileParser.traverse(e,function(e){&#x22;ExpressionStatement
+&#x22;===e.type&#x26;&#x26;&#x22;AssignmentExpression&#x22;===e.expression.type&#x26;&#x26;(&#x22;Identifier&#x22;===e.expression
+.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.name?r=e.expression.right:&#x22;MemberExpression&#x22;===e.expression
+.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.property.name&#x26;&#x26;(r=e.expression.right))});var n=null;return
+&#x22;Identifier&#x22;===r.type&#x26;&#x26;(n=r.name,fileParser.traverse(e,function(e){&#x22;VariableDeclarator&#x22;===e.type&#
+x26;&#x26;e.id.name===n&#x26;&#x26;(r=e.init)})),r}function appendToNode(e,r){var n=_esprimaFb2[&#x22;default&#x22;].parse(&#x22
+;var c = {&#x22;+r+&#x22;}&#x22;),t=null;fileParser.traverse(n,function(e){&#x22;VariableDeclarator&#x22;===e.type&#x26;&#x26;&#
+x22;c&#x22;===e.id.name&#x26;&#x26;(t=e.init.properties[0])}),e.properties&#x26;&#x26;e.properties.push(t)}function memberExpressionToString
+(e,r){var n=r||&#x22;&#x22;;return&#x22;MemberExpression&#x22;===e.type&#x26;&#x26;(n+=memberExpressionToString(e.object,n),n&#x26
+;&#x26;n.length&#x3e;0?n+=&#x22;.&#x22;+e.property.name:n=e.property.name),n}Object.defineProperty(exports,&#x22;__esModule&#x22
+;,{value:!0});var _createClass=function(){function e(e,r){for(var n=0;n&#x3c;r.length;n++){var t=r[n];t.enumerable=t.enumerable||!
+1,t.configurable=!0,&#x22;value&#x22;in t&#x26;&#x26;(t.writable=!0),Object.defineProperty(e,t.key,t)}}return function(r,n,t){return
+ n&#x26;&#x26;e(r.prototype,n),t&#x26;&#x26;e(r,t),r}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash
+),_path=require(&#x22;path&#x22;),_path2=_interopRequireDefault(_path),_esprimaFb=require(&#x22;esprima-fb&#x22;),_esprimaFb2=_interopRequireDefault
+(_esprimaFb),_escodegen=require(&#x22;escodegen&#x22;),_escodegen2=_interopRequireDefault(_escodegen),_FileManagerJs=require(&#x22
+;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileParserJs=require(&#x22;./FileParser.js&#x22
+;),fileParser=_interopRequireWildcard(_FileParserJs),group_keyword=&#x22;@Group:&#x22;,resource_keyword=&#x22;@Resources&#x22;,IndexManager
+=function(){function e(r){var n=arguments.length&#x3c;=1||void 0===arguments[1]?&#x22;.builder&#x22;:arguments[1],t=arguments.length
+&#x3c;=2||void 0===arguments[2]?&#x22;src&#x22;:arguments[2],a=arguments.length&#x3c;=3||void 0===arguments[3]?&#x22;index.js&#x22
+;:arguments[3];_classCallCheck(this,e),this.indexFilePath=_path2[&#x22;default&#x22;].join(r,n,t,a),this.fileManager=new _FileManagerJs2
+[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;parseIndexFile&#x22;,value:function(){var e=this;return this.fileManager
+.readFile(this.indexFilePath).then(function(r){if(!r)throw Error(&#x22;Index file is empty.&#x22;);try{return fileParser.<span class
+="apidocCodeKeywordSpan">getFileAst</span>(r)}catch(n){throw Error(n.message+&#x22;. File path: &#x22;+e.indexFilePath)}})}},{key
+:&#x22;getStructure&#x22;,value:function(e){var r={requires:[],groups:{}};fileParser.traverse(e,function(e){&#x22;ExpressionStatement
+&#x22;===e.type&#x26;&#x26;e.expression&#x26;&#x26;&#x22;CallExpression&#x22;===e.expression.type&#x26;&#x26;e.expression.callee
+&#x26;&#x26;&#x22;require&#x22;===e.expression.callee.name&#x26;&#x26;r.requires.push({source:e.expression.arguments[0].value})});
+var n=findExportsNode(e);if(n){var t=n.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var n=r.groups[e.key
+.name]={components:[]},t=e.value.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var r={name:e.key.name};fileParser
+.traverse(e,function(e){&#x22;CallExpression&#x22;===e.type&#x26;&#x26;e.callee&#x26;&#x26;&#x22;require&#x22;===e.callee.name&#
+x26;&#x26;e.arguments&#x26;&#x26;e.arguments.length&#x3e;0&#x26;&#x26;(r.source=e.arguments[0].value)}),&#x22;MemberExpression&#
+x22;===e.value.type&#x26;&#x26;(r.member=memberExpressionToString(e.value)),n.components.push(r)})})}return r}},{key:&#x22;resolveAbsoluteSourcePath
+&#x22;,value:function(e){var r=this,n=e.requires;n&#x26;&#x26;n.length&#x3e;0&#x26;&#x26;_lodash2[&#x22;default&#x22;].forEach(n
+,function(e){e.source&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22
+;].resolve(_path2[&#x22;default&#x22;].dirname(r.indexFilePath),e.source))});var t=e.groups;return t&#x26;&#x26;_lodash2[&#x22;default
+&#x22;].forOwn(t,function(e,n){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){e.source
+&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22;].resolve(_path2[&#x22
+;default&#x22;].dirname(r.indexFilePath),e.source))})}),e}},{key:&#x22;initIndex&#x22;,value:function(){var e=this;return this.parseIndexFile
+().then(function(r){var n=e.getStructure(r);return n=e.resolveAbsoluteSourcePath(n)})}},{key:&#x22;getComponentsTree&#x22;,value
+:function(){return this.initIndex().then(function(e){var r={};return e&#x26;&#x26;e.groups&#x26;&#x26;_lodash2[&#x22;default&#x22
+;].forOwn(e.groups,function(e,n){r[n]={},e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function
+(e){r[n][e.name]={name:e.name,absoluteSource:e.absoluteSource}})}),r})}},{key:&#x22;getComponentsNames&#x22;,value:function(){var
+ e=this;return this.getComponentsTree().then(function(r){return e.getComponentsNamesFromTree(r)})}},{key:&#x22;getComponentsNamesFromTree
+&#x22;,value:function(e){var r=[];return _lodash2[&#x22;default&#x22;].forOwn(e,function(e,n){_lodash2[&#x22;default&#x22;].forOwn
+(e,function(e,n){r.push(n)})}),r}},{key:&#x22;addComponent&#x22;,value:function(e,r,n){var t=this;return this.parseIndexFile().then
+(function(t){var a=findExportsNode(t);if(a){var o=null;fileParser.traverse(a,function(r){&#x22;Property&#x22;===r.type&#x26;&#x26
+;&#x22;Identifier&#x22;===r.key.type&#x26;&#x26;&#x22;ObjectExpression&#x22;===r.value.type&#x26;&#x26;r.key.name===e&#x26;&#x26
+;(o=r.value)}),o?appendToNode(o,r+&#x27;: require(&#x22;&#x27;+n+&#x27;&#x22;)&#x27;):appendToNode(a,e+&#x22;: {&#x22;+r+&#x27;:
+require(&#x22;&#x27;+n+&#x27;&#x22;)}&#x27;)}return _escodegen2[&#x22;default&#x22;].generate(t)}).then(function(e){return t.fileManager
+.writeFile(t.indexFilePath,e,!0)}).then(function(){return t.initIndex()})}}]),e}();exports[&#x22;default&#x22;]=IndexManager,module
+.exports=exports[&#x22;default&#x22;];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.FileParser.traverse" id="apidoc.element.react-ui-builder.FileParser.traverse">
+        function <span class="apidocSignatureSpan">react-ui-builder.FileParser.</span>traverse
+        <span class="apidocSignatureSpan">(e, r)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function traverse(e, r){r(e);for(var t in e)if(e.hasOwnProperty(t)){var a=e[t];&#x22;object&#x22;==typeof a&#x26;&#x26;null!==a&#x26;&#x26;traverse(a,r)}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var r={};if(null!=e)for(var n in
+ e)Object.prototype.hasOwnProperty.call(e,n)&#x26;&#x26;(r[n]=e[n]);return r[&#x22;default&#x22;]=e,r}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,r){if(!(e instanceof r))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}function findExportsNode(e){var r=null;fileParser.<span class="apidocCodeKeywordSpan
+">traverse</span>(e,function(e){&#x22;ExpressionStatement&#x22;===e.type&#x26;&#x26;&#x22;AssignmentExpression&#x22;===e.expression
+.type&#x26;&#x26;(&#x22;Identifier&#x22;===e.expression.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.name?r=e.expression
+.right:&#x22;MemberExpression&#x22;===e.expression.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.property.name&#x26
+;&#x26;(r=e.expression.right))});var n=null;return&#x22;Identifier&#x22;===r.type&#x26;&#x26;(n=r.name,fileParser.traverse(e,function
+(e){&#x22;VariableDeclarator&#x22;===e.type&#x26;&#x26;e.id.name===n&#x26;&#x26;(r=e.init)})),r}function appendToNode(e,r){var n
+=_esprimaFb2[&#x22;default&#x22;].parse(&#x22;var c = {&#x22;+r+&#x22;}&#x22;),t=null;fileParser.traverse(n,function(e){&#x22;VariableDeclarator
+&#x22;===e.type&#x26;&#x26;&#x22;c&#x22;===e.id.name&#x26;&#x26;(t=e.init.properties[0])}),e.properties&#x26;&#x26;e.properties.
+push(t)}function memberExpressionToString(e,r){var n=r||&#x22;&#x22;;return&#x22;MemberExpression&#x22;===e.type&#x26;&#x26;(n+=
+memberExpressionToString(e.object,n),n&#x26;&#x26;n.length&#x3e;0?n+=&#x22;.&#x22;+e.property.name:n=e.property.name),n}Object.defineProperty
+(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass=function(){function e(e,r){for(var n=0;n&#x3c;r.length;n++){var t=r
+[n];t.enumerable=t.enumerable||!1,t.configurable=!0,&#x22;value&#x22;in t&#x26;&#x26;(t.writable=!0),Object.defineProperty(e,t.key
+,t)}}return function(r,n,t){return n&#x26;&#x26;e(r.prototype,n),t&#x26;&#x26;e(r,t),r}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2
+=_interopRequireDefault(_lodash),_path=require(&#x22;path&#x22;),_path2=_interopRequireDefault(_path),_esprimaFb=require(&#x22;esprima
+-fb&#x22;),_esprimaFb2=_interopRequireDefault(_esprimaFb),_escodegen=require(&#x22;escodegen&#x22;),_escodegen2=_interopRequireDefault
+(_escodegen),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileParserJs
+=require(&#x22;./FileParser.js&#x22;),fileParser=_interopRequireWildcard(_FileParserJs),group_keyword=&#x22;@Group:&#x22;,resource_keyword
+=&#x22;@Resources&#x22;,IndexManager=function(){function e(r){var n=arguments.length&#x3c;=1||void 0===arguments[1]?&#x22;.builder
+&#x22;:arguments[1],t=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;src&#x22;:arguments[2],a=arguments.length&#x3c;=3||void
+ 0===arguments[3]?&#x22;index.js&#x22;:arguments[3];_classCallCheck(this,e),this.indexFilePath=_path2[&#x22;default&#x22;].join(
+r,n,t,a),this.fileManager=new _FileManagerJs2[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;parseIndexFile&#x22;,value:
+function(){var e=this;return this.fileManager.readFile(this.indexFilePath).then(function(r){if(!r)throw Error(&#x22;Index file is
+ empty.&#x22;);try{return fileParser.getFileAst(r)}catch(n){throw Error(n.message+&#x22;. File path: &#x22;+e.indexFilePath)}})}},{
+key:&#x22;getStructure&#x22;,value:function(e){var r={requires:[],groups:{}};fileParser.traverse(e,function(e){&#x22;ExpressionStatement
+&#x22;===e.type&#x26;&#x26;e.expression&#x26;&#x26;&#x22;CallExpression&#x22;===e.expression.type&#x26;&#x26;e.expression.callee
+&#x26;&#x26;&#x22;require&#x22;===e.expression.callee.name&#x26;&#x26;r.requires.push({source:e.expression.arguments[0].value})});
+var n=findExportsNode(e);if(n){var t=n.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var n=r.groups[e.key
+.name]={components:[]},t=e.value.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var r={name:e.key.name};fileParser
+.traverse(e,function(e){&#x22;CallExpression&#x22;===e.type&#x26;&#x26;e.callee&#x26;&#x26;&#x22;require&#x22;===e.callee.name&#
+x26;&#x26;e.arguments&#x26;&#x26;e.arguments.length&#x3e;0&#x26;&#x26;(r.source=e.arguments[0].value)}),&#x22;MemberExpression&#
+x22;===e.value.type&#x26;&#x26;(r.member=memberExpressionToString(e.value)),n.components.push(r)})})}return r}},{key:&#x22;resolveAbsoluteSourcePath
+&#x22;,value:function(e){var r=this,n=e.requires;n&#x26;&#x26;n.length&#x3e;0&#x26;&#x26;_lodash2[&#x22;default&#x22;].forEach(n
+,function(e){e.source&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22
+;].resolve(_path2[&#x22;default&#x22;].dirname(r.indexFilePath),e.source))});var t=e.groups;return t&#x26;&#x26;_lodash2[&#x22;default
+&#x22;].forOwn(t,function(e,n){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){e.source
+&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22;].resolve(_path2[&#x22
+;default&#x22;].dirname(r.indexFilePath),e.source))})}),e}},{key:&#x22;initIndex&#x22;,value:function(){var e=this;return this.parseIndexFile
+().then(function(r){var n=e.getStructure(r);return n=e.resolveAbsoluteSourcePath(n)})}},{key:&#x22;getComponentsTree&#x22;,value
+:function(){return this.initIndex().then(function(e){var r={};return e&#x26;&#x26;e.groups&#x26;&#x26;_lodash2[&#x22;default&#x22
+;].forOwn(e.groups,function(e,n){r[n]={},e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function
+(e){r[n][e.name]={name:e.name,absoluteSource:e.absoluteSource}})}),r})}},{key:&#x22;getComponentsNames&#x22;,value:function(){var
+ e=this;return this.getComponentsTree().then(function(r){return e.getComponentsNamesFromTree(r)})}},{key:&#x22;getComponentsNamesFromTree
+&#x22;,value:function(e){var r=[];return _lodash2[&#x22;default&#x22;].forOwn(e,function(e,n){_lodash2[&#x22;default&#x22;].forOwn
+(e,function(e,n){r.push(n)})}),r}},{key:&#x22;addComponent&#x22;,value:function(e,r,n){var t=this;return this.parseIndexFile().then
+(function(t){var a=findExportsNode(t);if(a){var o=null;fileParser.traverse(a,function(r){&#x22;Property&#x22;===r.type&#x26;&#x26
+;&#x22;Identifier&#x22;===r.key.type&#x26;&#x26;&#x22;ObjectExpression&#x22;===r.value.type&#x26;&#x26;r.key.name===e&#x26;&#x26
+;(o=r.value)}),o?appendToNode(o,r+&#x27;: require(&#x22;&#x27;+n+&#x27;&#x22;)&#x27;):appendToNode(a,e+&#x22;: {&#x22;+r+&#x27;:
+require(&#x22;&#x27;+n+&#x27;&#x22;)}&#x27;)}return _escodegen2[&#x22;default&#x22;].generate(t)}).then(function(e){return t.fileManager
+.writeFile(t.indexFilePath,e,!0)}).then(function(){return t.initIndex()})}}]),e}();exports[&#x22;default&#x22;]=IndexManager,module
+.exports=exports[&#x22;default&#x22;];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.FileParser.validateSourceCode" id="apidoc.element.react-ui-builder.FileParser.validateSourceCode">
+        function <span class="apidocSignatureSpan">react-ui-builder.FileParser.</span>validateSourceCode
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateSourceCode(e){try{_esprimaFb2[&#x22;default&#x22;].parse(e,{tolerant:!0})}catch(r){throw Error(&#x22;File is not valid, error: &#x22;+
+r.message)}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-ui-builder.ModelParser" id="apidoc.module.react-ui-builder.ModelParser">module react-ui-builder.ModelParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.ModelParser.cleanModel" id="apidoc.element.react-ui-builder.ModelParser.cleanModel">
+        function <span class="apidocSignatureSpan">react-ui-builder.ModelParser.</span>cleanModel
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cleanModel(e){if(e.props&#x26;&#x26;e.props[&#x22;data-umyid&#x22;]&#x26;&#x26;(e.props[&#x22;data-umyid&#x22;]=void 0,delete e.props[&#x22;data-umyid&#x22;]),_lodash2[&#x22;
+default&#x22;].forOwn(e.props,function(e,o){_lodash2[&#x22;default&#x22;].isObject(e)&#x26;&#x26;e.type&#x26;&#x26;cleanModel(e)}),e.children&#x26;&#x26;e.children.length&#x3e;0)
+for(var o=0;o&#x3c;e.children.length;o++)cleanModel(e.children[o])}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.ModelParser.getModelComponentMap" id="apidoc.element.react-ui-builder.ModelParser.getModelComponentMap">
+        function <span class="apidocSignatureSpan">react-ui-builder.ModelParser.</span>getModelComponentMap
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getModelComponentMap(e){var o=arguments.length&#x3c;=1||void 0===arguments[1]?{}:arguments[1];if(o[e.type]={},e.props&#x26;&#x26;_lodash2
+[&#x22;default&#x22;].forOwn(e.props,function(e,t){_lodash2[&#x22;default&#x22;].isObject(e)&#x26;&#x26;e.type&#x26;&#x26;getModelComponentMap(e,o)}),e.children&#x26;&#x26;e.children
+.length&#x3e;0)for(var t=0;t&#x3c;e.children.length;t++)getModelComponentMap(e.children[t],o);return o}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var t={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(t[r]=e[r]);return t[&#x22;default&#x22;]=e,t}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,t){for(var r=0;r&#x3c;t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,&#x22;value
+&#x22;in n&#x26;&#x26;(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&#x26;&#x26;e(t.prototype
+,r),n&#x26;&#x26;e(t,n),t}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault
+(_FileManagerJs),_IndexManagerJs=require(&#x22;./IndexManager.js&#x22;),_IndexManagerJs2=_interopRequireDefault(_IndexManagerJs),
+_ModelParserJs=require(&#x22;./ModelParser.js&#x22;),modelParser=_interopRequireWildcard(_ModelParserJs),_PathResolverJs=require
+(&#x22;./PathResolver.js&#x22;),pathResolver=_interopRequireWildcard(_PathResolverJs),_FileFormatterJs=require(&#x22;./FileFormatter
+.js&#x22;),formatter=_interopRequireWildcard(_FileFormatterJs),GeneratorManager=function(){function e(t){var r=arguments.length&#
+x3c;=1||void 0===arguments[1]?&#x22;.builder&#x22;:arguments[1],n=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;generators
+&#x22;:arguments[2],o=arguments.length&#x3c;=3||void 0===arguments[3]?&#x22;src&#x22;:arguments[3],a=arguments.length&#x3c;=4||void
+ 0===arguments[4]?&#x22;scripts&#x22;:arguments[4];_classCallCheck(this,e),this.projectDirPath=t,this.builderDirPath=_path2[&#x22
+;default&#x22;].join(t,r),this.generatorsDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,n),this.sourceDirPath=_path2
+[&#x22;default&#x22;].join(this.builderDirPath,o),this.indexFilePath=_path2[&#x22;default&#x22;].join(this.sourceDirPath,&#x22;index
+.js&#x22;),this.scriptsDirName=a,this.fileManager=new _FileManagerJs2[&#x22;default&#x22;],this.indexManager=new _IndexManagerJs2
+[&#x22;default&#x22;](this.projectDirPath)}return _createClass(e,[{key:&#x22;initGenerator&#x22;,value:function(e){var t=this;return
+ this.fileManager.readDirectory(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(r){if(!r.files||r.files.length
+&#x3c;=0)throw Error(&#x22;Current project does not have a generator, please add a generator.&#x22;);return r.files.reduce(function
+(r,n){return r.then(function(r){return r?r:t.fileManager.readJson(n).then(function(t){return t.name===e?{dirPath:_path2[&#x22;default
+&#x22;].dirname(n),filePath:n,config:t}:null})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path
+: &#x22;+n)})},Promise.resolve())})}},{key:&#x22;getGeneratorList&#x22;,value:function(){var e=this;return this.fileManager.readDirectory
+(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(t){if(!t.files||t.files.length&#x3c;=0)throw Error(&#x22;Current
+ project does not have a generator, please add a generator.&#x22;);var r=[],n=t.files.reduce(function(t,n){return t.then(function
+(t){return t?t:e.fileManager.readJson(n).then(function(e){r.push({dirPath:_path2[&#x22;default&#x22;].dirname(n),filePath:n,config
+:e})})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path: &#x22;+n)})},Promise.resolve());return
+ n.then(function(){return r.sort(function(e,t){return e.config.name&#x3e;t.config.name?1:e.config.name&#x3c;t.config.name?-1:0}),
+r})})}},{key:&#x22;createDataObject&#x22;,value:function(e,t,r){var n=this,o={component:{model:e,componentName:r.componentName,groupName
+:r.groupName,indexFilePath:this.indexFilePath}};return this.indexManager.initIndex().then(function(r){o.component.imports=[];var
+ a=modelParser.<span class="apidocCodeKeywordSpan">getModelComponentMap</span>(e);return r.groups&#x26;&#x26;_lodash2[&#x22;default
+&#x22;].forOwn(r.groups,function(e,t){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){
+a[e.name]&#x26;&#x26;o.component.imports.push({name:e.name,source:e.source,member:e.member})})}),n.initGenerator(t).then(function
+(e){if(!e.config)throw Error(&#x22;Generator &#x22;+e.filePath+&#x22; is not configured properly.&#x22;);if(!e.config.component)
+throw Error(&#x22;Generator &#x22;+e.filePath+&#x22; configuration does not have component section.&#x22;);return o.component.outputFilePath
+=_path2[&#x22;default&#x22;].join(n.projectDirPath,pathResolver.replaceInPath(e.config.component.destDirPath,_lodash2[&#x22;default
+&#x22;].pick(o.component,[&#x22;componentName&#x22;,&#x22;groupName&#x22;])),o.component.componentName+&#x22;.&#x22;+e.config.component
+.fileExtension),o.component.generatorScriptPath=_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName,e.config.component.script
+),o.modules={},e.config.modules&#x26;&#x26;e.config.modules.length&#x3e;0&#x26;&#x26;e.config.modules.map(function(t,r){var a=_lodash2
+[&#x22;default&#x22;].pick(o.component,[&#x22;componentName&#x22;,&#x22;groupName&#x22;]);o.modules[t.id]={outputFilePath:_path2
+[&#x22;default&#x22;].join(n.projectDirPath,pathResolver.replaceInPath(t.destDirPath,a),pathResolver.replaceInPath(t.name,a)+&#x22
+;.js&#x22;),name:pathResolver.replaceInPath(t.name,a),generatorScriptPath:_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName
+,t.script),validateJS:t.validateJS}}),o})})}},{key:&#x22;doGeneration&#x22;,value:function(e,t,r){var n=this;return this.createDataObject
+(e,t,r).then(function(e){var t={component:{},modules:{}},r=Promise.resolve();return r=r.then(function(){var r=pathResolver.resolveFromComponentPerspective
+(e);return n.generateText(r.component.generatorScriptPath,r).then(function(e){t.component.sourceCode=e,t.component.outputFilePath
+=r.component.outputFilePath,t.component.relativeFilePathInIndex=r.component.relativeFilePathInIndex,t.component.componentName=r.
+component.componentName,t.component.groupName=r.component.groupName})}),_lodash2[&#x22;default&#x22;].forOwn(e.modules,function(
+o,a){r=r.then(function(){try{var r=function(){var r=pathResolver.resolveFromModulePerspective(e,a);return{v:n.generateText(o.generatorScriptPath
+,r).then(function(e){t.modules[a]={sourceCode:e,outputFilePath:r.modules[a].outputFilePath,name:r.modules[a].name}})}}();if(&#x22
+;object&#x22;==typeof r)return r.v}catch(i){throw Error(i)}})}),r=r.then(function(){return n.fileManager.removeFile(_path2[&#x22
+;default&#x22;].join(n.projectDirPath,&#x22;.errors&#x22;)).then(function(){return t})})})}},{key:&#x22;commitGeneration&#x22;,value
+:function(e){var t=this,r=Promise.resolve();return _lodash2[&#x22;default&#x22;].forOwn(e.modules,function(e,n){r=r.then(function
+(){return t.fileManager.ensureFilePath(e.outputFilePath).then(function(){return t.fileManager.writeFile(e.outputFilePath,e.sourceCode
+,!0)})})}),r=r.then(function(){return t.fileManager.ensureFilePath(e.component.outputFilePath).then(function(){return t.fileManager
+.writeFile(e.component.outputFilePath,e.component.sourceCode,!0).then(function(){return t.indexManager.addComponent(e.component.
+groupName,e.component.componentName,e.component.relativeFilePathInIndex)})})})}},{key:&#x22;generateText&#x22;,value:function(e,
+t){var r=this,n=arguments.length&#x3c;=2||void 0===arguments[2]?!0:arguments[2];return new Promise(function(o,a){try{var i=require
+.resolve(e);i&#x26;&#x26;require.cache[i]&#x26;&#x26;delete require.cache[i];var u=require(e);u(t,function(t){n?!function(){var
+n=t;try{var i=formatter.formatJsFile(t);o(i)}catch(u){!function(){var t=_path2[&#x22;default&#x22;].join(r.projectDirPath,&#x22;.
+errors&#x22;,&#x22;generators&#x22;,_path2[&#x22;default&#x22;].basename(e));r.fileManager.ensureFilePath(t).then(function(){r.fileManager
+.writeFile(t,n)})[&#x22;catch&#x22;](function(e){console.error(&#x22;Writing bad file. Error: &#x22;+e)}),a(&#x22;Validation failed
+. &#x22;+u+&#x22;. Generator script file path: &#x22;+e)}()}}():o(t)},function(t){a(&#x22;Processing generator&#x27;s method is
+failed. Error: &#x22;+t+&#x22;. File path: &#x22;+e)})}catch(s){a(&#x22;Loading generator&#x27;s script is failed. Error: &#x22;+
+s+&#x22;. File path: &#x22;+e)}})}}]),e}();exports[&#x22;default&#x22;]=GeneratorManager,module.exports=exports[&#x22;default&#x22
+;];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-ui-builder.PathResolver" id="apidoc.module.react-ui-builder.PathResolver">module react-ui-builder.PathResolver</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.PathResolver.replaceInPath" id="apidoc.element.react-ui-builder.PathResolver.replaceInPath">
+        function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>replaceInPath
+        <span class="apidocSignatureSpan">(e, t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function replaceInPath(e, t){var r=e;return _lodash2[&#x22;default&#x22;].forOwn(t,function(e,t){r=r.replace(&#x22;{&#x22;+t+&#x22;}&#x22;,e)}),r}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var t={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(t[r]=e[r]);return t[&#x22;default&#x22;]=e,t}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,t){for(var r=0;r&#x3c;t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,&#x22;value
+&#x22;in n&#x26;&#x26;(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&#x26;&#x26;e(t.prototype
+,r),n&#x26;&#x26;e(t,n),t}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault
+(_FileManagerJs),_IndexManagerJs=require(&#x22;./IndexManager.js&#x22;),_IndexManagerJs2=_interopRequireDefault(_IndexManagerJs),
+_ModelParserJs=require(&#x22;./ModelParser.js&#x22;),modelParser=_interopRequireWildcard(_ModelParserJs),_PathResolverJs=require
+(&#x22;./PathResolver.js&#x22;),pathResolver=_interopRequireWildcard(_PathResolverJs),_FileFormatterJs=require(&#x22;./FileFormatter
+.js&#x22;),formatter=_interopRequireWildcard(_FileFormatterJs),GeneratorManager=function(){function e(t){var r=arguments.length&#
+x3c;=1||void 0===arguments[1]?&#x22;.builder&#x22;:arguments[1],n=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;generators
+&#x22;:arguments[2],o=arguments.length&#x3c;=3||void 0===arguments[3]?&#x22;src&#x22;:arguments[3],a=arguments.length&#x3c;=4||void
+ 0===arguments[4]?&#x22;scripts&#x22;:arguments[4];_classCallCheck(this,e),this.projectDirPath=t,this.builderDirPath=_path2[&#x22
+;default&#x22;].join(t,r),this.generatorsDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,n),this.sourceDirPath=_path2
+[&#x22;default&#x22;].join(this.builderDirPath,o),this.indexFilePath=_path2[&#x22;default&#x22;].join(this.sourceDirPath,&#x22;index
+.js&#x22;),this.scriptsDirName=a,this.fileManager=new _FileManagerJs2[&#x22;default&#x22;],this.indexManager=new _IndexManagerJs2
+[&#x22;default&#x22;](this.projectDirPath)}return _createClass(e,[{key:&#x22;initGenerator&#x22;,value:function(e){var t=this;return
+ this.fileManager.readDirectory(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(r){if(!r.files||r.files.length
+&#x3c;=0)throw Error(&#x22;Current project does not have a generator, please add a generator.&#x22;);return r.files.reduce(function
+(r,n){return r.then(function(r){return r?r:t.fileManager.readJson(n).then(function(t){return t.name===e?{dirPath:_path2[&#x22;default
+&#x22;].dirname(n),filePath:n,config:t}:null})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path
+: &#x22;+n)})},Promise.resolve())})}},{key:&#x22;getGeneratorList&#x22;,value:function(){var e=this;return this.fileManager.readDirectory
+(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(t){if(!t.files||t.files.length&#x3c;=0)throw Error(&#x22;Current
+ project does not have a generator, please add a generator.&#x22;);var r=[],n=t.files.reduce(function(t,n){return t.then(function
+(t){return t?t:e.fileManager.readJson(n).then(function(e){r.push({dirPath:_path2[&#x22;default&#x22;].dirname(n),filePath:n,config
+:e})})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path: &#x22;+n)})},Promise.resolve());return
+ n.then(function(){return r.sort(function(e,t){return e.config.name&#x3e;t.config.name?1:e.config.name&#x3c;t.config.name?-1:0}),
+r})})}},{key:&#x22;createDataObject&#x22;,value:function(e,t,r){var n=this,o={component:{model:e,componentName:r.componentName,groupName
+:r.groupName,indexFilePath:this.indexFilePath}};return this.indexManager.initIndex().then(function(r){o.component.imports=[];var
+ a=modelParser.getModelComponentMap(e);return r.groups&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(r.groups,function(e,t){e.
+components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){a[e.name]&#x26;&#x26;o.component.imports
+.push({name:e.name,source:e.source,member:e.member})})}),n.initGenerator(t).then(function(e){if(!e.config)throw Error(&#x22;Generator
+ &#x22;+e.filePath+&#x22; is not configured properly.&#x22;);if(!e.config.component)throw Error(&#x22;Generator &#x22;+e.filePath
++&#x22; configuration does not have component section.&#x22;);return o.component.outputFilePath=_path2[&#x22;default&#x22;].join
+(n.projectDirPath,pathResolver.<span class="apidocCodeKeywordSpan">replaceInPath</span>(e.config.component.destDirPath,_lodash2[&#
+x22;default&#x22;].pick(o.component,[&#x22;componentName&#x22;,&#x22;groupName&#x22;])),o.component.componentName+&#x22;.&#x22;+
+e.config.component.fileExtension),o.component.generatorScriptPath=_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName,e.
+config.component.script),o.modules={},e.config.modules&#x26;&#x26;e.config.modules.length&#x3e;0&#x26;&#x26;e.config.modules.map
+(function(t,r){var a=_lodash2[&#x22;default&#x22;].pick(o.component,[&#x22;componentName&#x22;,&#x22;groupName&#x22;]);o.modules
+[t.id]={outputFilePath:_path2[&#x22;default&#x22;].join(n.projectDirPath,pathResolver.replaceInPath(t.destDirPath,a),pathResolver
+.replaceInPath(t.name,a)+&#x22;.js&#x22;),name:pathResolver.replaceInPath(t.name,a),generatorScriptPath:_path2[&#x22;default&#x22
+;].join(e.dirPath,n.scriptsDirName,t.script),validateJS:t.validateJS}}),o})})}},{key:&#x22;doGeneration&#x22;,value:function(e,t
+,r){var n=this;return this.createDataObject(e,t,r).then(function(e){var t={component:{},modules:{}},r=Promise.resolve();return r
+=r.then(function(){var r=pathResolver.resolveFromComponentPerspective(e);return n.generateText(r.component.generatorScriptPath,r
+).then(function(e){t.component.sourceCode=e,t.component.outputFilePath=r.component.outputFilePath,t.component.relativeFilePathInIndex
+=r.component.relativeFilePathInIndex,t.component.componentName=r.component.componentName,t.component.groupName=r.component.groupName
+})}),_lodash2[&#x22;default&#x22;].forOwn(e.modules,function(o,a){r=r.then(function(){try{var r=function(){var r=pathResolver.resolveFromModulePerspective
+(e,a);return{v:n.generateText(o.generatorScriptPath,r).then(function(e){t.modules[a]={sourceCode:e,outputFilePath:r.modules[a].outputFilePath
+,name:r.modules[a].name}})}}();if(&#x22;object&#x22;==typeof r)return r.v}catch(i){throw Error(i)}})}),r=r.then(function(){return
+ n.fileManager.removeFile(_path2[&#x22;default&#x22;].join(n.projectDirPath,&#x22;.errors&#x22;)).then(function(){return t})})})}},{
+key:&#x22;commitGeneration&#x22;,value:function(e){var t=this,r=Promise.resolve();return _lodash2[&#x22;default&#x22;].forOwn(e.
+modules,function(e,n){r=r.then(function(){return t.fileManager.ensureFilePath(e.outputFilePath).then(function(){return t.fileManager
+.writeFile(e.outputFilePath,e.sourceCode,!0)})})}),r=r.then(function(){return t.fileManager.ensureFilePath(e.component.outputFilePath
+).then(function(){return t.fileManager.writeFile(e.component.outputFilePath,e.component.sourceCode,!0).then(function(){return t.
+indexManager.addComponent(e.component.groupName,e.component.componentName,e.component.relativeFilePathInIndex)})})})}},{key:&#x22
+;generateText&#x22;,value:function(e,t){var r=this,n=arguments.length&#x3c;=2||void 0===arguments[2]?!0:arguments[2];return new
+Promise(function(o,a){try{var i=require.resolve(e);i&#x26;&#x26;require.cache[i]&#x26;&#x26;delete require.cache[i];var u=require
+(e);u(t,function(t){n?!function(){var n=t;try{var i=formatter.formatJsFile(t);o(i)}catch(u){!function(){var t=_path2[&#x22;default
+&#x22;].join(r.projectDirPath,&#x22;.errors&#x22;,&#x22;generators&#x22;,_path2[&#x22;default&#x22;].basename(e));r.fileManager.
+ensureFilePath(t).then(function(){r.fileManager.writeFile(t,n)})[&#x22;catch&#x22;](function(e){console.error(&#x22;Writing bad
+file. Error: &#x22;+e)}),a(&#x22;Validation failed. &#x22;+u+&#x22;. Generator script file path: &#x22;+e)}()}}():o(t)},function
+(t){a(&#x22;Processing generator&#x27;s method is failed. Error: &#x22;+t+&#x22;. File path: &#x22;+e)})}catch(s){a(&#x22;Loading
+ generator&#x27;s script is failed. Error: &#x22;+s+&#x22;. File path: &#x22;+e)}})}}]),e}();exports[&#x22;default&#x22;]=GeneratorManager
+,module.exports=exports[&#x22;default&#x22;];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.PathResolver.resolveFromComponentPerspective" id="apidoc.element.react-ui-builder.PathResolver.resolveFromComponentPerspective">
+        function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>resolveFromComponentPerspective
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveFromComponentPerspective(e){var t=_lodash2[&#x22;default&#x22;].clone(e,!0),r=t.component.outputFilePath,a=_path2[&#x22;default
+&#x22;].dirname(r),o=_path2[&#x22;default&#x22;].dirname(t.component.indexFilePath);return t.component.relativeFilePathInIndex=_path2[&#x22;default&#x22;].
+relative(o,r).replace(/\\/g,&#x22;/&#x22;),t.component.imports.map(function(e,t){if(&#x22;../../&#x22;===e.source.substr(0,6)){var r=_path2[&#x22;default&#x22;].resolve(o,e.source);e.relativeSource=repairPath(_path2[&#x22;default&#x22;].relative(a,r)).replace(/\\/g,&#x22;/&#x22;)}else e.relativeSource=e.source}),_lodash2[&#x22;default&#x22;].forOwn(t.modules,function(e,t){e.relativeFilePath=repairPath(_path2[&#x22;default&#x22;].relative(a,e.outputFilePath)).replace(/\\/g,&#x22;/&#x22;)}),t}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var t={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(t[r]=e[r]);return t[&#x22;default&#x22;]=e,t}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,t){for(var r=0;r&#x3c;t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,&#x22;value
+&#x22;in n&#x26;&#x26;(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&#x26;&#x26;e(t.prototype
+,r),n&#x26;&#x26;e(t,n),t}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault
+(_FileManagerJs),_IndexManagerJs=require(&#x22;./IndexManager.js&#x22;),_IndexManagerJs2=_interopRequireDefault(_IndexManagerJs),
+_ModelParserJs=require(&#x22;./ModelParser.js&#x22;),modelParser=_interopRequireWildcard(_ModelParserJs),_PathResolverJs=require
+(&#x22;./PathResolver.js&#x22;),pathResolver=_interopRequireWildcard(_PathResolverJs),_FileFormatterJs=require(&#x22;./FileFormatter
+.js&#x22;),formatter=_interopRequireWildcard(_FileFormatterJs),GeneratorManager=function(){function e(t){var r=arguments.length&#
+x3c;=1||void 0===arguments[1]?&#x22;.builder&#x22;:arguments[1],n=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;generators
+&#x22;:arguments[2],o=arguments.length&#x3c;=3||void 0===arguments[3]?&#x22;src&#x22;:arguments[3],a=arguments.length&#x3c;=4||void
+ 0===arguments[4]?&#x22;scripts&#x22;:arguments[4];_classCallCheck(this,e),this.projectDirPath=t,this.builderDirPath=_path2[&#x22
+;default&#x22;].join(t,r),this.generatorsDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,n),this.sourceDirPath=_path2
+[&#x22;default&#x22;].join(this.builderDirPath,o),this.indexFilePath=_path2[&#x22;default&#x22;].join(this.sourceDirPath,&#x22;index
+.js&#x22;),this.scriptsDirName=a,this.fileManager=new _FileManagerJs2[&#x22;default&#x22;],this.indexManager=new _IndexManagerJs2
+[&#x22;default&#x22;](this.projectDirPath)}return _createClass(e,[{key:&#x22;initGenerator&#x22;,value:function(e){var t=this;return
+ this.fileManager.readDirectory(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(r){if(!r.files||r.files.length
+&#x3c;=0)throw Error(&#x22;Current project does not have a generator, please add a generator.&#x22;);return r.files.reduce(function
+(r,n){return r.then(function(r){return r?r:t.fileManager.readJson(n).then(function(t){return t.name===e?{dirPath:_path2[&#x22;default
+&#x22;].dirname(n),filePath:n,config:t}:null})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path
+: &#x22;+n)})},Promise.resolve())})}},{key:&#x22;getGeneratorList&#x22;,value:function(){var e=this;return this.fileManager.readDirectory
+(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(t){if(!t.files||t.files.length&#x3c;=0)throw Error(&#x22;Current
+ project does not have a generator, please add a generator.&#x22;);var r=[],n=t.files.reduce(function(t,n){return t.then(function
+(t){return t?t:e.fileManager.readJson(n).then(function(e){r.push({dirPath:_path2[&#x22;default&#x22;].dirname(n),filePath:n,config
+:e})})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path: &#x22;+n)})},Promise.resolve());return
+ n.then(function(){return r.sort(function(e,t){return e.config.name&#x3e;t.config.name?1:e.config.name&#x3c;t.config.name?-1:0}),
+r})})}},{key:&#x22;createDataObject&#x22;,value:function(e,t,r){var n=this,o={component:{model:e,componentName:r.componentName,groupName
+:r.groupName,indexFilePath:this.indexFilePath}};return this.indexManager.initIndex().then(function(r){o.component.imports=[];var
+ a=modelParser.getModelComponentMap(e);return r.groups&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(r.groups,function(e,t){e.
+components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){a[e.name]&#x26;&#x26;o.component.imports
+.push({name:e.name,source:e.source,member:e.member})})}),n.initGenerator(t).then(function(e){if(!e.config)throw Error(&#x22;Generator
+ &#x22;+e.filePath+&#x22; is not configured properly.&#x22;);if(!e.config.component)throw Error(&#x22;Generator &#x22;+e.filePath
++&#x22; configuration does not have component section.&#x22;);return o.component.outputFilePath=_path2[&#x22;default&#x22;].join
+(n.projectDirPath,pathResolver.replaceInPath(e.config.component.destDirPath,_lodash2[&#x22;default&#x22;].pick(o.component,[&#x22
+;componentName&#x22;,&#x22;groupName&#x22;])),o.component.componentName+&#x22;.&#x22;+e.config.component.fileExtension),o.component
+.generatorScriptPath=_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName,e.config.component.script),o.modules={},e.config
+.modules&#x26;&#x26;e.config.modules.length&#x3e;0&#x26;&#x26;e.config.modules.map(function(t,r){var a=_lodash2[&#x22;default&#x22
+;].pick(o.component,[&#x22;componentName&#x22;,&#x22;groupName&#x22;]);o.modules[t.id]={outputFilePath:_path2[&#x22;default&#x22
+;].join(n.projectDirPath,pathResolver.replaceInPath(t.destDirPath,a),pathResolver.replaceInPath(t.name,a)+&#x22;.js&#x22;),name:
+pathResolver.replaceInPath(t.name,a),generatorScriptPath:_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName,t.script),validateJS
+:t.validateJS}}),o})})}},{key:&#x22;doGeneration&#x22;,value:function(e,t,r){var n=this;return this.createDataObject(e,t,r).then
+(function(e){var t={component:{},modules:{}},r=Promise.resolve();return r=r.then(function(){var r=pathResolver.<span class="apidocCodeKeywordSpan
+">resolveFromComponentPerspective</span>(e);return n.generateText(r.component.generatorScriptPath,r).then(function(e){t.component
+.sourceCode=e,t.component.outputFilePath=r.component.outputFilePath,t.component.relativeFilePathInIndex=r.component.relativeFilePathInIndex
+,t.component.componentName=r.component.componentName,t.component.groupName=r.component.groupName})}),_lodash2[&#x22;default&#x22
+;].forOwn(e.modules,function(o,a){r=r.then(function(){try{var r=function(){var r=pathResolver.resolveFromModulePerspective(e,a);
+return{v:n.generateText(o.generatorScriptPath,r).then(function(e){t.modules[a]={sourceCode:e,outputFilePath:r.modules[a].outputFilePath
+,name:r.modules[a].name}})}}();if(&#x22;object&#x22;==typeof r)return r.v}catch(i){throw Error(i)}})}),r=r.then(function(){return
+ n.fileManager.removeFile(_path2[&#x22;default&#x22;].join(n.projectDirPath,&#x22;.errors&#x22;)).then(function(){return t})})})}},{
+key:&#x22;commitGeneration&#x22;,value:function(e){var t=this,r=Promise.resolve();return _lodash2[&#x22;default&#x22;].forOwn(e.
+modules,function(e,n){r=r.then(function(){return t.fileManager.ensureFilePath(e.outputFilePath).then(function(){return t.fileManager
+.writeFile(e.outputFilePath,e.sourceCode,!0)})})}),r=r.then(function(){return t.fileManager.ensureFilePath(e.component.outputFilePath
+).then(function(){return t.fileManager.writeFile(e.component.outputFilePath,e.component.sourceCode,!0).then(function(){return t.
+indexManager.addComponent(e.component.groupName,e.component.componentName,e.component.relativeFilePathInIndex)})})})}},{key:&#x22
+;generateText&#x22;,value:function(e,t){var r=this,n=arguments.length&#x3c;=2||void 0===arguments[2]?!0:arguments[2];return new
+Promise(function(o,a){try{var i=require.resolve(e);i&#x26;&#x26;require.cache[i]&#x26;&#x26;delete require.cache[i];var u=require
+(e);u(t,function(t){n?!function(){var n=t;try{var i=formatter.formatJsFile(t);o(i)}catch(u){!function(){var t=_path2[&#x22;default
+&#x22;].join(r.projectDirPath,&#x22;.errors&#x22;,&#x22;generators&#x22;,_path2[&#x22;default&#x22;].basename(e));r.fileManager.
+ensureFilePath(t).then(function(){r.fileManager.writeFile(t,n)})[&#x22;catch&#x22;](function(e){console.error(&#x22;Writing bad
+file. Error: &#x22;+e)}),a(&#x22;Validation failed. &#x22;+u+&#x22;. Generator script file path: &#x22;+e)}()}}():o(t)},function
+(t){a(&#x22;Processing generator&#x27;s method is failed. Error: &#x22;+t+&#x22;. File path: &#x22;+e)})}catch(s){a(&#x22;Loading
+ generator&#x27;s script is failed. Error: &#x22;+s+&#x22;. File path: &#x22;+e)}})}}]),e}();exports[&#x22;default&#x22;]=GeneratorManager
+,module.exports=exports[&#x22;default&#x22;];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.PathResolver.resolveFromModulePerspective" id="apidoc.element.react-ui-builder.PathResolver.resolveFromModulePerspective">
+        function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>resolveFromModulePerspective
+        <span class="apidocSignatureSpan">(e, t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveFromModulePerspective(e, t){var r=_lodash2[&#x22;default&#x22;].clone(e,!0),a=_path2[&#x22;default&#x22;].dirname(e.component.indexFilePath
+),o=r.modules[t].outputFilePath,l=_path2[&#x22;default&#x22;].dirname(o);return r.component.relativeFilePath=_path2[&#x22;default&#x22;].relative(l,
+r.component.outputFilePath).replace(/\\/g,&#x22;/&#x22;),r.modules[t].relativeFilePathInIndex=_path2[&#x22;default&#x22;].relative(a,o).replace(/\\/g,&#x22;/&#x22;),r.component.imports.map(function(e,t){if(&#x22;../../&#x22;===e.source.substr(0,6)){var r=_path2[&#x22;default&#x22;].resolve(a,e.source);e.relativeSource=repairPath(_path2[&#x22;default&#x22;].relative(l,r)).replace(/\\/g,&#x22;/&#x22;)}else e.relativeSource=e.source}),_lodash2[&#x22;default&#x22;].forOwn(r.modules,function(e,t){e.relativeFilePath=repairPath(_path2[&#x22;default&#x22;].relative(l,e.outputFilePath)).replace(/\\/g,&#x22;/&#x22;)}),r}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var t={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(t[r]=e[r]);return t[&#x22;default&#x22;]=e,t}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,t){for(var r=0;r&#x3c;t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,&#x22;value
+&#x22;in n&#x26;&#x26;(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&#x26;&#x26;e(t.prototype
+,r),n&#x26;&#x26;e(t,n),t}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault
+(_FileManagerJs),_IndexManagerJs=require(&#x22;./IndexManager.js&#x22;),_IndexManagerJs2=_interopRequireDefault(_IndexManagerJs),
+_ModelParserJs=require(&#x22;./ModelParser.js&#x22;),modelParser=_interopRequireWildcard(_ModelParserJs),_PathResolverJs=require
+(&#x22;./PathResolver.js&#x22;),pathResolver=_interopRequireWildcard(_PathResolverJs),_FileFormatterJs=require(&#x22;./FileFormatter
+.js&#x22;),formatter=_interopRequireWildcard(_FileFormatterJs),GeneratorManager=function(){function e(t){var r=arguments.length&#
+x3c;=1||void 0===arguments[1]?&#x22;.builder&#x22;:arguments[1],n=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;generators
+&#x22;:arguments[2],o=arguments.length&#x3c;=3||void 0===arguments[3]?&#x22;src&#x22;:arguments[3],a=arguments.length&#x3c;=4||void
+ 0===arguments[4]?&#x22;scripts&#x22;:arguments[4];_classCallCheck(this,e),this.projectDirPath=t,this.builderDirPath=_path2[&#x22
+;default&#x22;].join(t,r),this.generatorsDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,n),this.sourceDirPath=_path2
+[&#x22;default&#x22;].join(this.builderDirPath,o),this.indexFilePath=_path2[&#x22;default&#x22;].join(this.sourceDirPath,&#x22;index
+.js&#x22;),this.scriptsDirName=a,this.fileManager=new _FileManagerJs2[&#x22;default&#x22;],this.indexManager=new _IndexManagerJs2
+[&#x22;default&#x22;](this.projectDirPath)}return _createClass(e,[{key:&#x22;initGenerator&#x22;,value:function(e){var t=this;return
+ this.fileManager.readDirectory(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(r){if(!r.files||r.files.length
+&#x3c;=0)throw Error(&#x22;Current project does not have a generator, please add a generator.&#x22;);return r.files.reduce(function
+(r,n){return r.then(function(r){return r?r:t.fileManager.readJson(n).then(function(t){return t.name===e?{dirPath:_path2[&#x22;default
+&#x22;].dirname(n),filePath:n,config:t}:null})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path
+: &#x22;+n)})},Promise.resolve())})}},{key:&#x22;getGeneratorList&#x22;,value:function(){var e=this;return this.fileManager.readDirectory
+(this.generatorsDirPath,[&#x22;generator.json&#x22;]).then(function(t){if(!t.files||t.files.length&#x3c;=0)throw Error(&#x22;Current
+ project does not have a generator, please add a generator.&#x22;);var r=[],n=t.files.reduce(function(t,n){return t.then(function
+(t){return t?t:e.fileManager.readJson(n).then(function(e){r.push({dirPath:_path2[&#x22;default&#x22;].dirname(n),filePath:n,config
+:e})})})[&#x22;catch&#x22;](function(e){throw Error(e.message+&#x22;. Generator file path: &#x22;+n)})},Promise.resolve());return
+ n.then(function(){return r.sort(function(e,t){return e.config.name&#x3e;t.config.name?1:e.config.name&#x3c;t.config.name?-1:0}),
+r})})}},{key:&#x22;createDataObject&#x22;,value:function(e,t,r){var n=this,o={component:{model:e,componentName:r.componentName,groupName
+:r.groupName,indexFilePath:this.indexFilePath}};return this.indexManager.initIndex().then(function(r){o.component.imports=[];var
+ a=modelParser.getModelComponentMap(e);return r.groups&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(r.groups,function(e,t){e.
+components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){a[e.name]&#x26;&#x26;o.component.imports
+.push({name:e.name,source:e.source,member:e.member})})}),n.initGenerator(t).then(function(e){if(!e.config)throw Error(&#x22;Generator
+ &#x22;+e.filePath+&#x22; is not configured properly.&#x22;);if(!e.config.component)throw Error(&#x22;Generator &#x22;+e.filePath
++&#x22; configuration does not have component section.&#x22;);return o.component.outputFilePath=_path2[&#x22;default&#x22;].join
+(n.projectDirPath,pathResolver.replaceInPath(e.config.component.destDirPath,_lodash2[&#x22;default&#x22;].pick(o.component,[&#x22
+;componentName&#x22;,&#x22;groupName&#x22;])),o.component.componentName+&#x22;.&#x22;+e.config.component.fileExtension),o.component
+.generatorScriptPath=_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName,e.config.component.script),o.modules={},e.config
+.modules&#x26;&#x26;e.config.modules.length&#x3e;0&#x26;&#x26;e.config.modules.map(function(t,r){var a=_lodash2[&#x22;default&#x22
+;].pick(o.component,[&#x22;componentName&#x22;,&#x22;groupName&#x22;]);o.modules[t.id]={outputFilePath:_path2[&#x22;default&#x22
+;].join(n.projectDirPath,pathResolver.replaceInPath(t.destDirPath,a),pathResolver.replaceInPath(t.name,a)+&#x22;.js&#x22;),name:
+pathResolver.replaceInPath(t.name,a),generatorScriptPath:_path2[&#x22;default&#x22;].join(e.dirPath,n.scriptsDirName,t.script),validateJS
+:t.validateJS}}),o})})}},{key:&#x22;doGeneration&#x22;,value:function(e,t,r){var n=this;return this.createDataObject(e,t,r).then
+(function(e){var t={component:{},modules:{}},r=Promise.resolve();return r=r.then(function(){var r=pathResolver.resolveFromComponentPerspective
+(e);return n.generateText(r.component.generatorScriptPath,r).then(function(e){t.component.sourceCode=e,t.component.outputFilePath
+=r.component.outputFilePath,t.component.relativeFilePathInIndex=r.component.relativeFilePathInIndex,t.component.componentName=r.
+component.componentName,t.component.groupName=r.component.groupName})}),_lodash2[&#x22;default&#x22;].forOwn(e.modules,function(
+o,a){r=r.then(function(){try{var r=function(){var r=pathResolver.<span class="apidocCodeKeywordSpan">resolveFromModulePerspective
+</span>(e,a);return{v:n.generateText(o.generatorScriptPath,r).then(function(e){t.modules[a]={sourceCode:e,outputFilePath:r.modules
+[a].outputFilePath,name:r.modules[a].name}})}}();if(&#x22;object&#x22;==typeof r)return r.v}catch(i){throw Error(i)}})}),r=r.then
+(function(){return n.fileManager.removeFile(_path2[&#x22;default&#x22;].join(n.projectDirPath,&#x22;.errors&#x22;)).then(function
+(){return t})})})}},{key:&#x22;commitGeneration&#x22;,value:function(e){var t=this,r=Promise.resolve();return _lodash2[&#x22;default
+&#x22;].forOwn(e.modules,function(e,n){r=r.then(function(){return t.fileManager.ensureFilePath(e.outputFilePath).then(function(){
+return t.fileManager.writeFile(e.outputFilePath,e.sourceCode,!0)})})}),r=r.then(function(){return t.fileManager.ensureFilePath(e
+.component.outputFilePath).then(function(){return t.fileManager.writeFile(e.component.outputFilePath,e.component.sourceCode,!0).
+then(function(){return t.indexManager.addComponent(e.component.groupName,e.component.componentName,e.component.relativeFilePathInIndex
+)})})})}},{key:&#x22;generateText&#x22;,value:function(e,t){var r=this,n=arguments.length&#x3c;=2||void 0===arguments[2]?!0:arguments
+[2];return new Promise(function(o,a){try{var i=require.resolve(e);i&#x26;&#x26;require.cache[i]&#x26;&#x26;delete require.cache[
+i];var u=require(e);u(t,function(t){n?!function(){var n=t;try{var i=formatter.formatJsFile(t);o(i)}catch(u){!function(){var t=_path2
+[&#x22;default&#x22;].join(r.projectDirPath,&#x22;.errors&#x22;,&#x22;generators&#x22;,_path2[&#x22;default&#x22;].basename(e));
+r.fileManager.ensureFilePath(t).then(function(){r.fileManager.writeFile(t,n)})[&#x22;catch&#x22;](function(e){console.error(&#x22
+;Writing bad file. Error: &#x22;+e)}),a(&#x22;Validation failed. &#x22;+u+&#x22;. Generator script file path: &#x22;+e)}()}}():o
+(t)},function(t){a(&#x22;Processing generator&#x27;s method is failed. Error: &#x22;+t+&#x22;. File path: &#x22;+e)})}catch(s){a
+(&#x22;Loading generator&#x27;s script is failed. Error: &#x22;+s+&#x22;. File path: &#x22;+e)}})}}]),e}();exports[&#x22;default
+&#x22;]=GeneratorManager,module.exports=exports[&#x22;default&#x22;];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-ui-builder.PathResolver.resolveFromProjectPerspective" id="apidoc.element.react-ui-builder.PathResolver.resolveFromProjectPerspective">
+        function <span class="apidocSignatureSpan">react-ui-builder.PathResolver.</span>resolveFromProjectPerspective
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveFromProjectPerspective(e){var t=_path2[&#x22;default&#x22;].dirname(e.indexFilePath),r=e.outputDirPath;return e.pages.map(
+function(e,a){e.imports&#x26;&#x26;e.imports.length&#x3e;0&#x26;&#x26;e.imports.map(function(e,a){if(&#x22;../../&#x22;===e.source.substr(0,6)){var o=_path2[&#x22;default
+&#x22;].resolve(t,e.source);e.relativeSource=repairPath(_path2[&#x22;default&#x22;].relative(r,o)).replace(/\\/g,&#x22;/&#x22;)}else e.relativeSource=e.source}),e.resources&#x26;&#x26;e.resources.requires.map(function(e,a){if(&#x22;../../&#x22;===e.source.substr(0,6)){var o=_path2[&#x22;default&#x22;].resolve(t,e.source);e.relativeSource=repairPath(_path2[&#x22;default&#x22;].relative(r,o)).replace(/\\/g,&#x22;/&#x22;)}else e.relativeSource=e.source})}),e}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var t={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(t[r]=e[r]);return t[&#x22;default&#x22;]=e,t}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,t){for(var r=0;r&#x3c;t.length;r++){var a=t[r];a.enumerable=a.enumerable||!1,a.configurable=!0,&#x22;value
+&#x22;in a&#x26;&#x26;(a.writable=!0),Object.defineProperty(e,a.key,a)}}return function(t,r,a){return r&#x26;&#x26;e(t.prototype
+,r),a&#x26;&#x26;e(t,a),t}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault
+(_FileManagerJs),_IndexManagerJs=require(&#x22;./IndexManager.js&#x22;),_IndexManagerJs2=_interopRequireDefault(_IndexManagerJs),
+_ModelParserJs=require(&#x22;./ModelParser.js&#x22;),modelParser=_interopRequireWildcard(_ModelParserJs),_PathResolverJs=require
+(&#x22;./PathResolver.js&#x22;),pathResolver=_interopRequireWildcard(_PathResolverJs),_FileFormatterJs=require(&#x22;./FileFormatter
+.js&#x22;),formatter=_interopRequireWildcard(_FileFormatterJs),_ProjectCompilerJs=require(&#x22;./ProjectCompiler.js&#x22;),_ProjectCompilerJs2
+=_interopRequireDefault(_ProjectCompilerJs),configFileName=&#x22;react-ui-builder.json&#x22;,templateDirName=&#x22;templates&#x22
+;,storageDirName=&#x22;.data&#x22;,builderDirName=&#x22;.builder&#x22;,buildDirName=&#x22;build&#x22;,generatorsDirName=&#x22;generators
+&#x22;,sourceDirName=&#x22;src&#x22;,scriptsDirName=&#x22;scripts&#x22;,docsDirName=&#x22;docs&#x22;,fileConfigName=&#x22;config
+.json&#x22;,indexFileName=&#x22;index.js&#x22;,npmPackageFileName=&#x22;package.json&#x22;,previewTemplateDirName=&#x22;live-preview
+&#x22;,LivePreviewManager=function(){function e(t){_classCallCheck(this,e),this.serverDirPath=t,this.serverConfigFilePath=_path2
+[&#x22;default&#x22;].join(this.serverDirPath,configFileName),this.serverTemplateDirPath=_path2[&#x22;default&#x22;].join(this.serverDirPath
+,templateDirName),this.packageFilePath=_path2[&#x22;default&#x22;].join(this.serverDirPath,npmPackageFileName),this.storageDirPath
+=_path2[&#x22;default&#x22;].join(this.serverDirPath,storageDirName),this.previewTemplateDirPath=_path2[&#x22;default&#x22;].join
+(this.serverTemplateDirPath,previewTemplateDirName),this.fileManager=new _FileManagerJs2[&#x22;default&#x22;],this.compiler=new
+_ProjectCompilerJs2[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;setProjectDirPath&#x22;,value:function(e){this.projectDirPath
+=e,this.builderDirPath=_path2[&#x22;default&#x22;].join(e,builderDirName),this.buildDirPath=_path2[&#x22;default&#x22;].join(this
+.builderDirPath,buildDirName),this.generatorsDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,generatorsDirName),this
+.sourceDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,sourceDirName),this.indexFilePath=_path2[&#x22;default&#x22;].
+join(this.sourceDirPath,indexFileName),this.docsDirPath=_path2[&#x22;default&#x22;].join(this.builderDirPath,docsDirName),this.scriptsDirName
+=scriptsDirName,this.configFilePath=_path2[&#x22;default&#x22;].join(this.builderDirPath,fileConfigName)}},{key:&#x22;createPageDataObject
+&#x22;,value:function(e,t){var r={model:e,pageName:e.pageName,pageTitle:e.pageTitle,pageMetaInfo:e.pageMetaInfo,imports:[]},a=modelParser
+.getModelComponentMap(_lodash2[&#x22;default&#x22;].extend(e,{type:e.pageName}));return t.groups&#x26;&#x26;_lodash2[&#x22;default
+&#x22;].forOwn(t.groups,function(e,t){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){
+a[e.name]&#x26;&#x26;r.imports.push({name:e.name,source:e.source,member:e.member})})}),r}},{key:&#x22;createResourcesDataObject&#
+x22;,value:function(e){var t={requires:[]};return e.requires&#x26;&#x26;e.requires.length&#x3e;0&#x26;&#x26;e.requires.map(function
+(e){t.requires.push({source:e.source})}),t}},{key:&#x22;createProjectDataObject&#x22;,value:function(e,t,r){var a=this,i={outputDirPath
+:_path2[&#x22;default&#x22;].join(this.buildDirPath,&#x22;live-preview&#x22;),indexFilePath:this.indexFilePath,pages:[]};if(!(e&#
+x26;&#x26;e.pages&#x26;&#x26;e.pages.length&#x3e;0))throw Error(&#x22;Project does not have pages.&#x22;);return e.pages.map(function
+(e,n){if(r[e.pageName]){var u=a.createPageDataObject(e,t);u.isIndexPage=r[e.pageName].isIndexPage,i.pages.push(u)}}),i.resources
+=this.createResourcesDataObject(t),i=pathResolver.<span class="apidocCodeKeywordSpan">resolveFromProjectPerspective</span>(i)}},{
+key:&#x22;doGeneration&#x22;,value:function(e,t,r){var a=this,i={pages:[]},n=this.createProjectDataObject(e,t,r),u=_path2[&#x22;
+default&#x22;].join(this.previewTemplateDirPath,&#x22;Page.tpl&#x22;),o=_path2[&#x22;default&#x22;].join(this.previewTemplateDirPath
+,&#x22;Html.tpl&#x22;),l=_path2[&#x22;default&#x22;].join(this.previewTemplateDirPath,&#x22;Resources.tpl&#x22;),s=null,h=null,p
+=null;return this.fileManager.readFile(u).then(function(e){s=_lodash2[&#x22;default&#x22;].template(e)}).then(function(){return
+a.fileManager.readFile(o).then(function(e){h=_lodash2[&#x22;default&#x22;].template(e)})}).then(function(){return a.fileManager.
+readFile(l).then(function(e){p=_lodash2[&#x22;default&#x22;].template(e)})}).then(function(){return i.outputDirPath=n.outputDirPath
+,n.pages.map(function(e,t){var r=e.isIndexPage?&#x22;index&#x22;:e.pageName;i.pages.push({pageOutputFilePath:_path2[&#x22;default
+&#x22;].join(n.outputDirPath,e.pageName+&#x22;.js&#x22;),pageSourceCode:s(e),htmlOutputFilePath:_path2[&#x22;default&#x22;].join
+(n.outputDirPath,r+&#x22;.html&#x22;),htmlSourceCode:h(e),bundleFileName:e.pageName})}),i.resources={outputFilePath:_path2[&#x22
+;default&#x22;].join(n.outputDirPath,&#x22;resources.js&#x22;),sourceCode:p(n.resources),bundleFileName:&#x22;resources.bundle.js
+&#x22;},i})}},{key:&#x22;commitGeneration&#x22;,value:function(e){var t=this,r=_path2[&#x22;default&#x22;].join(this.projectDirPath
+,&#x22;node_modules&#x22;),a=Promise.resolve();return a=a.then(function(){return t.fileManager.removeFile(e.outputDirPath)}),a=a
+.then(function(){return t.fileManager.ensureFilePath(e.resources.outputFilePath).then(function(){return t.fileManager.writeFile(
+e.resources.outputFilePath,e.resources.sourceCode,!0)}).then(function(){return t.compiler.compileNotOptimized(e.resources.outputFilePath
+,e.outputDirPath,e.resources.bundleFileName,r)})}),e.pages.map(function(e,r){a=a.then(function(){return t.fileManager.ensureFilePath
+(e.pageOutputFilePath).then(function(){return t.fileManager.writeFile(e.pageOutputFilePath,e.pageSourceCode,!0)}).then(function(){
+return t.fileManager.ensureFilePath(e.htmlOutputFilePath)}).then(function(){return t.fileManager.writeFile(e.htmlOutputFilePath,
+e.htmlSourceCode,!1)})})}),a=a.then(function(){var a={};return e.pages.map(function(e,t){a[e.bundleFileName]=e.pageOutputFilePath
+}),t.compiler.compileNotOptimized(a,e.outputDirPath,&#x22;[name].bundle.js&#x22;,r,!0)}),a=a.then(function(){return&#x22;live-preview
+/index.html&#x22;})}}]),e}();exports[&#x22;default&#x22;]=LivePreviewManager,module.exports=exports[&#x22;default&#x22;];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
