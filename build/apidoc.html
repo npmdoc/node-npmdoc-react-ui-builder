@@ -271,59 +271,45 @@ Can not parse file, error: &#x22;+t.message)}return r}</pre></li>
 
 
 
-&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var r={};if(null!=e)for(var n in
- e)Object.prototype.hasOwnProperty.call(e,n)&#x26;&#x26;(r[n]=e[n]);return r[&#x22;default&#x22;]=e,r}function _interopRequireDefault
-(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,r){if(!(e instanceof r))throw new TypeError
-(&#x22;Cannot call a class as a function&#x22;)}function findExportsNode(e){var r=null;fileParser.traverse(e,function(e){&#x22;ExpressionStatement
-&#x22;===e.type&#x26;&#x26;&#x22;AssignmentExpression&#x22;===e.expression.type&#x26;&#x26;(&#x22;Identifier&#x22;===e.expression
-.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.name?r=e.expression.right:&#x22;MemberExpression&#x22;===e.expression
-.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.property.name&#x26;&#x26;(r=e.expression.right))});var n=null;return
-&#x22;Identifier&#x22;===r.type&#x26;&#x26;(n=r.name,fileParser.traverse(e,function(e){&#x22;VariableDeclarator&#x22;===e.type&#
-x26;&#x26;e.id.name===n&#x26;&#x26;(r=e.init)})),r}function appendToNode(e,r){var n=_esprimaFb2[&#x22;default&#x22;].parse(&#x22
-;var c = {&#x22;+r+&#x22;}&#x22;),t=null;fileParser.traverse(n,function(e){&#x22;VariableDeclarator&#x22;===e.type&#x26;&#x26;&#
-x22;c&#x22;===e.id.name&#x26;&#x26;(t=e.init.properties[0])}),e.properties&#x26;&#x26;e.properties.push(t)}function memberExpressionToString
-(e,r){var n=r||&#x22;&#x22;;return&#x22;MemberExpression&#x22;===e.type&#x26;&#x26;(n+=memberExpressionToString(e.object,n),n&#x26
-;&#x26;n.length&#x3e;0?n+=&#x22;.&#x22;+e.property.name:n=e.property.name),n}Object.defineProperty(exports,&#x22;__esModule&#x22
-;,{value:!0});var _createClass=function(){function e(e,r){for(var n=0;n&#x3c;r.length;n++){var t=r[n];t.enumerable=t.enumerable||!
-1,t.configurable=!0,&#x22;value&#x22;in t&#x26;&#x26;(t.writable=!0),Object.defineProperty(e,t.key,t)}}return function(r,n,t){return
- n&#x26;&#x26;e(r.prototype,n),t&#x26;&#x26;e(r,t),r}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash
-),_path=require(&#x22;path&#x22;),_path2=_interopRequireDefault(_path),_esprimaFb=require(&#x22;esprima-fb&#x22;),_esprimaFb2=_interopRequireDefault
-(_esprimaFb),_escodegen=require(&#x22;escodegen&#x22;),_escodegen2=_interopRequireDefault(_escodegen),_FileManagerJs=require(&#x22
-;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileParserJs=require(&#x22;./FileParser.js&#x22
-;),fileParser=_interopRequireWildcard(_FileParserJs),group_keyword=&#x22;@Group:&#x22;,resource_keyword=&#x22;@Resources&#x22;,IndexManager
-=function(){function e(r){var n=arguments.length&#x3c;=1||void 0===arguments[1]?&#x22;.builder&#x22;:arguments[1],t=arguments.length
-&#x3c;=2||void 0===arguments[2]?&#x22;src&#x22;:arguments[2],a=arguments.length&#x3c;=3||void 0===arguments[3]?&#x22;index.js&#x22
-;:arguments[3];_classCallCheck(this,e),this.indexFilePath=_path2[&#x22;default&#x22;].join(r,n,t,a),this.fileManager=new _FileManagerJs2
-[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;parseIndexFile&#x22;,value:function(){var e=this;return this.fileManager
-.readFile(this.indexFilePath).then(function(r){if(!r)throw Error(&#x22;Index file is empty.&#x22;);try{return fileParser.<span class
-="apidocCodeKeywordSpan">getFileAst</span>(r)}catch(n){throw Error(n.message+&#x22;. File path: &#x22;+e.indexFilePath)}})}},{key
-:&#x22;getStructure&#x22;,value:function(e){var r={requires:[],groups:{}};fileParser.traverse(e,function(e){&#x22;ExpressionStatement
-&#x22;===e.type&#x26;&#x26;e.expression&#x26;&#x26;&#x22;CallExpression&#x22;===e.expression.type&#x26;&#x26;e.expression.callee
-&#x26;&#x26;&#x22;require&#x22;===e.expression.callee.name&#x26;&#x26;r.requires.push({source:e.expression.arguments[0].value})});
-var n=findExportsNode(e);if(n){var t=n.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var n=r.groups[e.key
-.name]={components:[]},t=e.value.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var r={name:e.key.name};fileParser
-.traverse(e,function(e){&#x22;CallExpression&#x22;===e.type&#x26;&#x26;e.callee&#x26;&#x26;&#x22;require&#x22;===e.callee.name&#
-x26;&#x26;e.arguments&#x26;&#x26;e.arguments.length&#x3e;0&#x26;&#x26;(r.source=e.arguments[0].value)}),&#x22;MemberExpression&#
-x22;===e.value.type&#x26;&#x26;(r.member=memberExpressionToString(e.value)),n.components.push(r)})})}return r}},{key:&#x22;resolveAbsoluteSourcePath
-&#x22;,value:function(e){var r=this,n=e.requires;n&#x26;&#x26;n.length&#x3e;0&#x26;&#x26;_lodash2[&#x22;default&#x22;].forEach(n
-,function(e){e.source&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22
-;].resolve(_path2[&#x22;default&#x22;].dirname(r.indexFilePath),e.source))});var t=e.groups;return t&#x26;&#x26;_lodash2[&#x22;default
-&#x22;].forOwn(t,function(e,n){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){e.source
-&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22;].resolve(_path2[&#x22
-;default&#x22;].dirname(r.indexFilePath),e.source))})}),e}},{key:&#x22;initIndex&#x22;,value:function(){var e=this;return this.parseIndexFile
-().then(function(r){var n=e.getStructure(r);return n=e.resolveAbsoluteSourcePath(n)})}},{key:&#x22;getComponentsTree&#x22;,value
-:function(){return this.initIndex().then(function(e){var r={};return e&#x26;&#x26;e.groups&#x26;&#x26;_lodash2[&#x22;default&#x22
-;].forOwn(e.groups,function(e,n){r[n]={},e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function
-(e){r[n][e.name]={name:e.name,absoluteSource:e.absoluteSource}})}),r})}},{key:&#x22;getComponentsNames&#x22;,value:function(){var
- e=this;return this.getComponentsTree().then(function(r){return e.getComponentsNamesFromTree(r)})}},{key:&#x22;getComponentsNamesFromTree
-&#x22;,value:function(e){var r=[];return _lodash2[&#x22;default&#x22;].forOwn(e,function(e,n){_lodash2[&#x22;default&#x22;].forOwn
-(e,function(e,n){r.push(n)})}),r}},{key:&#x22;addComponent&#x22;,value:function(e,r,n){var t=this;return this.parseIndexFile().then
-(function(t){var a=findExportsNode(t);if(a){var o=null;fileParser.traverse(a,function(r){&#x22;Property&#x22;===r.type&#x26;&#x26
-;&#x22;Identifier&#x22;===r.key.type&#x26;&#x26;&#x22;ObjectExpression&#x22;===r.value.type&#x26;&#x26;r.key.name===e&#x26;&#x26
-;(o=r.value)}),o?appendToNode(o,r+&#x27;: require(&#x22;&#x27;+n+&#x27;&#x22;)&#x27;):appendToNode(a,e+&#x22;: {&#x22;+r+&#x27;:
-require(&#x22;&#x27;+n+&#x27;&#x22;)}&#x27;)}return _escodegen2[&#x22;default&#x22;].generate(t)}).then(function(e){return t.fileManager
-.writeFile(t.indexFilePath,e,!0)}).then(function(){return t.initIndex()})}}]),e}();exports[&#x22;default&#x22;]=IndexManager,module
-.exports=exports[&#x22;default&#x22;];
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var n={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(n[r]=e[r]);return n[&#x22;default&#x22;]=e,n}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,n){if(!(e instanceof n))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,n){for(var r=0;r&#x3c;n.length;r++){var t=n[r];t.enumerable=t.enumerable||!1,t.configurable=!0,&#x22;value
+&#x22;in t&#x26;&#x26;(t.writable=!0),Object.defineProperty(e,t.key,t)}}return function(n,r,t){return r&#x26;&#x26;e(n.prototype
+,r),t&#x26;&#x26;e(n,t),n}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_esprimaFb=require(&#x22;esprima-fb&#x22;),_esprimaFb2=_interopRequireDefault(_esprimaFb
+),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileParserJs=require
+(&#x22;./FileParser.js&#x22;),fileParser=_interopRequireWildcard(_FileParserJs),group_keyword=&#x22;@Group:&#x22;,resource_keyword
+=&#x22;@Resources&#x22;,IndexManager=function(){function e(n){var r=arguments.length&#x3c;=1||void 0===arguments[1]?&#x22;.builder
+&#x22;:arguments[1],t=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;src&#x22;:arguments[2],o=arguments.length&#x3c;=3||void
+ 0===arguments[3]?&#x22;index.js&#x22;:arguments[3];_classCallCheck(this,e),this.indexFilePath=_path2[&#x22;default&#x22;].join(
+n,r,t,o),this.fileManager=new _FileManagerJs2[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;parseIndexFile&#x22;,value:
+function(){var e=this;return this.fileManager.readFile(this.indexFilePath).then(function(n){if(!n)throw Error(&#x22;Index file is
+ empty.&#x22;);try{return fileParser.<span class="apidocCodeKeywordSpan">getFileAst</span>(n)}catch(r){throw Error(r.message+&#x22
+;. File path: &#x22;+e.indexFilePath)}})}},{key:&#x22;getStructure&#x22;,value:function(e){if(!e.comments||e.comments.length&#x3c
+;=0)throw Error(&#x22;Index file does not have comments.&#x22;);for(var n={startBlockPosition:e.range[0],endBlockPosition:e.range
+[1],groups:{}},r=null,t=e.range[1],o=e.comments.length-1;o&#x3e;=0;--o)if(r=e.comments[o],&#x22;Line&#x22;===r.type){var i=r.value
+.indexOf(group_keyword);i&#x3e;=0?(n.groups[r.value.substr(i+group_keyword.length).trim()]={startBlockPosition:r.range[1],endBlockPosition
+:t,components:[]},t=r.range[0]):(i=r.value.indexOf(resource_keyword),i&#x3e;=0&#x26;&#x26;(n.resources={startBlockPosition:r.range
+[1],endBlockPosition:t,items:[]},t=r.range[0]))}return n}},{key:&#x22;fillGroups&#x22;,value:function(e,n){return fileParser.traverse
+(e,function(e){&#x22;ExportDeclaration&#x22;===e.type&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(n,function(r,t){e.range[0]&#
+x3e;r.startBlockPosition&#x26;&#x26;e.range[1]&#x3c;=r.endBlockPosition&#x26;&#x26;e.specifiers&#x26;&#x26;e.specifiers.length&#
+x3e;0&#x26;&#x26;e.specifiers.map(function(r,o){&#x22;ExportSpecifier&#x22;===r.type&#x26;&#x26;&#x22;Identifier&#x22;===r.id.type
+&#x26;&#x26;n[t].components.push({name:r.id.name,source:e.source.value.trim(),startLinePosition:e.range[0],endLinePosition:e.range
+[1]})})})}),n}},{key:&#x22;fillResourceItems&#x22;,value:function(e,n){return n.items=n.items||[],fileParser.traverse(e,function
+(e){&#x22;ImportDeclaration&#x22;===e.type&#x26;&#x26;e.range[0]&#x3e;n.startBlockPosition&#x26;&#x26;e.range[1]&#x3c;=n.endBlockPosition
+&#x26;&#x26;n.items.push({source:e.source.value,startLinePosition:e.range[0],endLinePosition:e.range[1]})}),n}},{key:&#x22;resolveAbsoluteSourcePath
+&#x22;,value:function(e){var n=this;return e&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(e,function(e,r){e.components&#x26;&#
+x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){e.source&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22
+;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22;].resolve(n.indexFilePath,e.source))})}),e}},{key:&#x22;initIndex&#x22
+;,value:function(){var e=this;return this.parseIndexFile().then(function(n){var r=e.getStructure(n);return r.groups&#x26;&#x26;(
+r.groups=e.fillGroups(n,r.groups),r.groups=e.resolveAbsoluteSourcePath(r.groups)),r.resources&#x26;&#x26;(r.resources=e.fillResourceItems
+(n,r.resources)),r})}},{key:&#x22;getComponentsTree&#x22;,value:function(){return this.initIndex().then(function(e){var n={};return
+ e&#x26;&#x26;e.groups&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(e.groups,function(e,r){n[r]={},e.components&#x26;&#x26;e.
+components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){n[r][e.name]={name:e.name,absoluteSource:e.absoluteSource}})}),
+n})}},{key:&#x22;addResources&#x22;,value:function(){var e=this;return this.initIndex().then(function(n){if(!n.resources){var r=&#
+x22;\n// &#x22;+resource_keyword+&#x22;\n&#x22;,t=0;return e.fileManager.placeInPosition(e.indexFilePath,{text:r,position:t,format:!0})}}).then(function(){return e.initIndex()})}},{key:&#x22;addResourceItem&#x22;,value:function(e){var n=this;return this.addResources().then(function(r){var t=&#x22;\nimport &#x27;&#x22;+e+&#x22;&#x27;;\n\n&#x22;,o=r.resources,i=o.endBlockPosition&#x3e;o.startBlockPosition?o.endBlockPosition:o.startBlockPosition;return n.fileManager.placeInPosition(n.indexFilePath,{text:t,position:i,format:!0})}).then(function(){return n.initIndex()})}},{key:&#x22;addGroup&#x22;,value:function(e){var n=this;return this.initIndex().then(function(r){if(!r.groups[e]){var t=&#x22;\n\n//&#x22;+group_keyword+&#x22; &#x22;+e+&#x22;\n&#x22;,o=r.endBlockPosition;return n.fileManager.placeInPosition(n.indexFilePath,{text:t,position:o,format:!0})}}).then(function(){return n.initIndex()})}},{key:&#x22;addComponent&#x22;,value:function(e,n,r){var t=this;return this.addGroup(e).then(function(o){if(o.groups[e]){var i=&#x22;\nexport { &#x22;+n+&#x22; } from &#x27;&#x22;+r+&#x22;&#x27;;\n&#x22;,s=o.groups[e],a=s.endBlockPosition&#x3e;s.startBlockPosition?s.endBlockPosition:s.startBlockPosition;return t.fileManager.placeInPosition(t.indexFilePath,{text:i,position:a,format:!0})}}).then(function(){return t.initIndex()})}}]),e}();exports[&#x22;default&#x22;]=IndexManager,module.exports=exports[&#x22;default&#x22;];
 ...</pre></li>
     </ul>
 
@@ -345,59 +331,45 @@ require(&#x22;&#x27;+n+&#x27;&#x22;)}&#x27;)}return _escodegen2[&#x22;default&#x
 
 
 
-&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var r={};if(null!=e)for(var n in
- e)Object.prototype.hasOwnProperty.call(e,n)&#x26;&#x26;(r[n]=e[n]);return r[&#x22;default&#x22;]=e,r}function _interopRequireDefault
-(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,r){if(!(e instanceof r))throw new TypeError
-(&#x22;Cannot call a class as a function&#x22;)}function findExportsNode(e){var r=null;fileParser.<span class="apidocCodeKeywordSpan
-">traverse</span>(e,function(e){&#x22;ExpressionStatement&#x22;===e.type&#x26;&#x26;&#x22;AssignmentExpression&#x22;===e.expression
-.type&#x26;&#x26;(&#x22;Identifier&#x22;===e.expression.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.name?r=e.expression
-.right:&#x22;MemberExpression&#x22;===e.expression.left.type&#x26;&#x26;&#x22;exports&#x22;===e.expression.left.property.name&#x26
-;&#x26;(r=e.expression.right))});var n=null;return&#x22;Identifier&#x22;===r.type&#x26;&#x26;(n=r.name,fileParser.traverse(e,function
-(e){&#x22;VariableDeclarator&#x22;===e.type&#x26;&#x26;e.id.name===n&#x26;&#x26;(r=e.init)})),r}function appendToNode(e,r){var n
-=_esprimaFb2[&#x22;default&#x22;].parse(&#x22;var c = {&#x22;+r+&#x22;}&#x22;),t=null;fileParser.traverse(n,function(e){&#x22;VariableDeclarator
-&#x22;===e.type&#x26;&#x26;&#x22;c&#x22;===e.id.name&#x26;&#x26;(t=e.init.properties[0])}),e.properties&#x26;&#x26;e.properties.
-push(t)}function memberExpressionToString(e,r){var n=r||&#x22;&#x22;;return&#x22;MemberExpression&#x22;===e.type&#x26;&#x26;(n+=
-memberExpressionToString(e.object,n),n&#x26;&#x26;n.length&#x3e;0?n+=&#x22;.&#x22;+e.property.name:n=e.property.name),n}Object.defineProperty
-(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass=function(){function e(e,r){for(var n=0;n&#x3c;r.length;n++){var t=r
-[n];t.enumerable=t.enumerable||!1,t.configurable=!0,&#x22;value&#x22;in t&#x26;&#x26;(t.writable=!0),Object.defineProperty(e,t.key
-,t)}}return function(r,n,t){return n&#x26;&#x26;e(r.prototype,n),t&#x26;&#x26;e(r,t),r}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2
-=_interopRequireDefault(_lodash),_path=require(&#x22;path&#x22;),_path2=_interopRequireDefault(_path),_esprimaFb=require(&#x22;esprima
--fb&#x22;),_esprimaFb2=_interopRequireDefault(_esprimaFb),_escodegen=require(&#x22;escodegen&#x22;),_escodegen2=_interopRequireDefault
-(_escodegen),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileParserJs
-=require(&#x22;./FileParser.js&#x22;),fileParser=_interopRequireWildcard(_FileParserJs),group_keyword=&#x22;@Group:&#x22;,resource_keyword
-=&#x22;@Resources&#x22;,IndexManager=function(){function e(r){var n=arguments.length&#x3c;=1||void 0===arguments[1]?&#x22;.builder
-&#x22;:arguments[1],t=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;src&#x22;:arguments[2],a=arguments.length&#x3c;=3||void
+&#x22;use strict&#x22;;function _interopRequireWildcard(e){if(e&#x26;&#x26;e.__esModule)return e;var n={};if(null!=e)for(var r in
+ e)Object.prototype.hasOwnProperty.call(e,r)&#x26;&#x26;(n[r]=e[r]);return n[&#x22;default&#x22;]=e,n}function _interopRequireDefault
+(e){return e&#x26;&#x26;e.__esModule?e:{&#x22;default&#x22;:e}}function _classCallCheck(e,n){if(!(e instanceof n))throw new TypeError
+(&#x22;Cannot call a class as a function&#x22;)}Object.defineProperty(exports,&#x22;__esModule&#x22;,{value:!0});var _createClass
+=function(){function e(e,n){for(var r=0;r&#x3c;n.length;r++){var t=n[r];t.enumerable=t.enumerable||!1,t.configurable=!0,&#x22;value
+&#x22;in t&#x26;&#x26;(t.writable=!0),Object.defineProperty(e,t.key,t)}}return function(n,r,t){return r&#x26;&#x26;e(n.prototype
+,r),t&#x26;&#x26;e(n,t),n}}(),_lodash=require(&#x22;lodash&#x22;),_lodash2=_interopRequireDefault(_lodash),_path=require(&#x22;path
+&#x22;),_path2=_interopRequireDefault(_path),_esprimaFb=require(&#x22;esprima-fb&#x22;),_esprimaFb2=_interopRequireDefault(_esprimaFb
+),_FileManagerJs=require(&#x22;./FileManager.js&#x22;),_FileManagerJs2=_interopRequireDefault(_FileManagerJs),_FileParserJs=require
+(&#x22;./FileParser.js&#x22;),fileParser=_interopRequireWildcard(_FileParserJs),group_keyword=&#x22;@Group:&#x22;,resource_keyword
+=&#x22;@Resources&#x22;,IndexManager=function(){function e(n){var r=arguments.length&#x3c;=1||void 0===arguments[1]?&#x22;.builder
+&#x22;:arguments[1],t=arguments.length&#x3c;=2||void 0===arguments[2]?&#x22;src&#x22;:arguments[2],o=arguments.length&#x3c;=3||void
  0===arguments[3]?&#x22;index.js&#x22;:arguments[3];_classCallCheck(this,e),this.indexFilePath=_path2[&#x22;default&#x22;].join(
-r,n,t,a),this.fileManager=new _FileManagerJs2[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;parseIndexFile&#x22;,value:
-function(){var e=this;return this.fileManager.readFile(this.indexFilePath).then(function(r){if(!r)throw Error(&#x22;Index file is
- empty.&#x22;);try{return fileParser.getFileAst(r)}catch(n){throw Error(n.message+&#x22;. File path: &#x22;+e.indexFilePath)}})}},{
-key:&#x22;getStructure&#x22;,value:function(e){var r={requires:[],groups:{}};fileParser.traverse(e,function(e){&#x22;ExpressionStatement
-&#x22;===e.type&#x26;&#x26;e.expression&#x26;&#x26;&#x22;CallExpression&#x22;===e.expression.type&#x26;&#x26;e.expression.callee
-&#x26;&#x26;&#x22;require&#x22;===e.expression.callee.name&#x26;&#x26;r.requires.push({source:e.expression.arguments[0].value})});
-var n=findExportsNode(e);if(n){var t=n.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var n=r.groups[e.key
-.name]={components:[]},t=e.value.properties;t&#x26;&#x26;t.length&#x3e;0&#x26;&#x26;t.map(function(e){var r={name:e.key.name};fileParser
-.traverse(e,function(e){&#x22;CallExpression&#x22;===e.type&#x26;&#x26;e.callee&#x26;&#x26;&#x22;require&#x22;===e.callee.name&#
-x26;&#x26;e.arguments&#x26;&#x26;e.arguments.length&#x3e;0&#x26;&#x26;(r.source=e.arguments[0].value)}),&#x22;MemberExpression&#
-x22;===e.value.type&#x26;&#x26;(r.member=memberExpressionToString(e.value)),n.components.push(r)})})}return r}},{key:&#x22;resolveAbsoluteSourcePath
-&#x22;,value:function(e){var r=this,n=e.requires;n&#x26;&#x26;n.length&#x3e;0&#x26;&#x26;_lodash2[&#x22;default&#x22;].forEach(n
-,function(e){e.source&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22
-;].resolve(_path2[&#x22;default&#x22;].dirname(r.indexFilePath),e.source))});var t=e.groups;return t&#x26;&#x26;_lodash2[&#x22;default
-&#x22;].forOwn(t,function(e,n){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){e.source
-&#x26;&#x26;0===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22;].resolve(_path2[&#x22
-;default&#x22;].dirname(r.indexFilePath),e.source))})}),e}},{key:&#x22;initIndex&#x22;,value:function(){var e=this;return this.parseIndexFile
-().then(function(r){var n=e.getStructure(r);return n=e.resolveAbsoluteSourcePath(n)})}},{key:&#x22;getComponentsTree&#x22;,value
-:function(){return this.initIndex().then(function(e){var r={};return e&#x26;&#x26;e.groups&#x26;&#x26;_lodash2[&#x22;default&#x22
-;].forOwn(e.groups,function(e,n){r[n]={},e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function
-(e){r[n][e.name]={name:e.name,absoluteSource:e.absoluteSource}})}),r})}},{key:&#x22;getComponentsNames&#x22;,value:function(){var
- e=this;return this.getComponentsTree().then(function(r){return e.getComponentsNamesFromTree(r)})}},{key:&#x22;getComponentsNamesFromTree
-&#x22;,value:function(e){var r=[];return _lodash2[&#x22;default&#x22;].forOwn(e,function(e,n){_lodash2[&#x22;default&#x22;].forOwn
-(e,function(e,n){r.push(n)})}),r}},{key:&#x22;addComponent&#x22;,value:function(e,r,n){var t=this;return this.parseIndexFile().then
-(function(t){var a=findExportsNode(t);if(a){var o=null;fileParser.traverse(a,function(r){&#x22;Property&#x22;===r.type&#x26;&#x26
-;&#x22;Identifier&#x22;===r.key.type&#x26;&#x26;&#x22;ObjectExpression&#x22;===r.value.type&#x26;&#x26;r.key.name===e&#x26;&#x26
-;(o=r.value)}),o?appendToNode(o,r+&#x27;: require(&#x22;&#x27;+n+&#x27;&#x22;)&#x27;):appendToNode(a,e+&#x22;: {&#x22;+r+&#x27;:
-require(&#x22;&#x27;+n+&#x27;&#x22;)}&#x27;)}return _escodegen2[&#x22;default&#x22;].generate(t)}).then(function(e){return t.fileManager
-.writeFile(t.indexFilePath,e,!0)}).then(function(){return t.initIndex()})}}]),e}();exports[&#x22;default&#x22;]=IndexManager,module
-.exports=exports[&#x22;default&#x22;];
+n,r,t,o),this.fileManager=new _FileManagerJs2[&#x22;default&#x22;]}return _createClass(e,[{key:&#x22;parseIndexFile&#x22;,value:
+function(){var e=this;return this.fileManager.readFile(this.indexFilePath).then(function(n){if(!n)throw Error(&#x22;Index file is
+ empty.&#x22;);try{return fileParser.getFileAst(n)}catch(r){throw Error(r.message+&#x22;. File path: &#x22;+e.indexFilePath)}})}},{
+key:&#x22;getStructure&#x22;,value:function(e){if(!e.comments||e.comments.length&#x3c;=0)throw Error(&#x22;Index file does not have
+ comments.&#x22;);for(var n={startBlockPosition:e.range[0],endBlockPosition:e.range[1],groups:{}},r=null,t=e.range[1],o=e.comments
+.length-1;o&#x3e;=0;--o)if(r=e.comments[o],&#x22;Line&#x22;===r.type){var i=r.value.indexOf(group_keyword);i&#x3e;=0?(n.groups[r
+.value.substr(i+group_keyword.length).trim()]={startBlockPosition:r.range[1],endBlockPosition:t,components:[]},t=r.range[0]):(i=
+r.value.indexOf(resource_keyword),i&#x3e;=0&#x26;&#x26;(n.resources={startBlockPosition:r.range[1],endBlockPosition:t,items:[]},
+t=r.range[0]))}return n}},{key:&#x22;fillGroups&#x22;,value:function(e,n){return fileParser.<span class="apidocCodeKeywordSpan">
+traverse</span>(e,function(e){&#x22;ExportDeclaration&#x22;===e.type&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(n,function(
+r,t){e.range[0]&#x3e;r.startBlockPosition&#x26;&#x26;e.range[1]&#x3c;=r.endBlockPosition&#x26;&#x26;e.specifiers&#x26;&#x26;e.specifiers
+.length&#x3e;0&#x26;&#x26;e.specifiers.map(function(r,o){&#x22;ExportSpecifier&#x22;===r.type&#x26;&#x26;&#x22;Identifier&#x22;===
+r.id.type&#x26;&#x26;n[t].components.push({name:r.id.name,source:e.source.value.trim(),startLinePosition:e.range[0],endLinePosition
+:e.range[1]})})})}),n}},{key:&#x22;fillResourceItems&#x22;,value:function(e,n){return n.items=n.items||[],fileParser.traverse(e,
+function(e){&#x22;ImportDeclaration&#x22;===e.type&#x26;&#x26;e.range[0]&#x3e;n.startBlockPosition&#x26;&#x26;e.range[1]&#x3c;=n
+.endBlockPosition&#x26;&#x26;n.items.push({source:e.source.value,startLinePosition:e.range[0],endLinePosition:e.range[1]})}),n}},{
+key:&#x22;resolveAbsoluteSourcePath&#x22;,value:function(e){var n=this;return e&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(
+e,function(e,r){e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){e.source&#x26;&#x26;0
+===e.source.indexOf(&#x22;../../&#x22;)&#x26;&#x26;(e.absoluteSource=_path2[&#x22;default&#x22;].resolve(n.indexFilePath,e.source
+))})}),e}},{key:&#x22;initIndex&#x22;,value:function(){var e=this;return this.parseIndexFile().then(function(n){var r=e.getStructure
+(n);return r.groups&#x26;&#x26;(r.groups=e.fillGroups(n,r.groups),r.groups=e.resolveAbsoluteSourcePath(r.groups)),r.resources&#x26
+;&#x26;(r.resources=e.fillResourceItems(n,r.resources)),r})}},{key:&#x22;getComponentsTree&#x22;,value:function(){return this.initIndex
+().then(function(e){var n={};return e&#x26;&#x26;e.groups&#x26;&#x26;_lodash2[&#x22;default&#x22;].forOwn(e.groups,function(e,r){
+n[r]={},e.components&#x26;&#x26;e.components.length&#x3e;0&#x26;&#x26;e.components.map(function(e){n[r][e.name]={name:e.name,absoluteSource
+:e.absoluteSource}})}),n})}},{key:&#x22;addResources&#x22;,value:function(){var e=this;return this.initIndex().then(function(n){
+if(!n.resources){var r=&#x22;\n// &#x22;+resource_keyword+&#x22;\n&#x22;,t=0;return e.fileManager.placeInPosition(e.indexFilePath,{text:r,position:t,format:!0})}}).then(function(){return e.initIndex()})}},{key:&#x22;addResourceItem&#x22;,value:function(e){var n=this;return this.addResources().then(function(r){var t=&#x22;\nimport &#x27;&#x22;+e+&#x22;&#x27;;\n\n&#x22;,o=r.resources,i=o.endBlockPosition&#x3e;o.startBlockPosition?o.endBlockPosition:o.startBlockPosition;return n.fileManager.placeInPosition(n.indexFilePath,{text:t,position:i,format:!0})}).then(function(){return n.initIndex()})}},{key:&#x22;addGroup&#x22;,value:function(e){var n=this;return this.initIndex().then(function(r){if(!r.groups[e]){var t=&#x22;\n\n//&#x22;+group_keyword+&#x22; &#x22;+e+&#x22;\n&#x22;,o=r.endBlockPosition;return n.fileManager.placeInPosition(n.indexFilePath,{text:t,position:o,format:!0})}}).then(function(){return n.initIndex()})}},{key:&#x22;addComponent&#x22;,value:function(e,n,r){var t=this;return this.addGroup(e).then(function(o){if(o.groups[e]){var i=&#x22;\nexport { &#x22;+n+&#x22; } from &#x27;&#x22;+r+&#x22;&#x27;;\n&#x22;,s=o.groups[e],a=s.endBlockPosition&#x3e;s.startBlockPosition?s.endBlockPosition:s.startBlockPosition;return t.fileManager.placeInPosition(t.indexFilePath,{text:i,position:a,format:!0})}}).then(function(){return t.initIndex()})}}]),e}();exports[&#x22;default&#x22;]=IndexManager,module.exports=exports[&#x22;default&#x22;];
 ...</pre></li>
     </ul>
 
